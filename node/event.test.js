@@ -18,6 +18,12 @@ var callback = function (count) {
 	console.log(count)
 }
 
+var removeListenerCallback = function (eventName) {
+	console.log(eventName)
+}
+
 counter.addListener("incremented", callback)
 
 counter.increment()
+
+counter.removeListener("incremented", removeListenerCallback("incremented"))
