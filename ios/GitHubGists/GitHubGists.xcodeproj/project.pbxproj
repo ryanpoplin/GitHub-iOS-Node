@@ -16,6 +16,8 @@
 		4A2C9A9B1C88B28F0020B202 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A2C9A991C88B28F0020B202 /* LaunchScreen.storyboard */; };
 		4A2C9AA61C88B2900020B202 /* GitHubGistsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2C9AA51C88B2900020B202 /* GitHubGistsTests.swift */; };
 		4A2C9AB11C88B2910020B202 /* GitHubGistsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2C9AB01C88B2910020B202 /* GitHubGistsUITests.swift */; };
+		4A2C9ABF1C88BCD00020B202 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2C9ABE1C88BCD00020B202 /* Alamofire.framework */; };
+		4A2C9AC11C88BCD30020B202 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2C9AC01C88BCD30020B202 /* SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		4A2C9AAC1C88B2900020B202 /* GitHubGistsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubGistsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A2C9AB01C88B2910020B202 /* GitHubGistsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubGistsUITests.swift; sourceTree = "<group>"; };
 		4A2C9AB21C88B2910020B202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A2C9ABE1C88BCD00020B202 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		4A2C9AC01C88BCD30020B202 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A2C9ABF1C88BCD00020B202 /* Alamofire.framework in Frameworks */,
+				4A2C9AC11C88BCD30020B202 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +87,8 @@
 		4A2C9A7F1C88B28F0020B202 = {
 			isa = PBXGroup;
 			children = (
+				4A2C9AC01C88BCD30020B202 /* SwiftyJSON.framework */,
+				4A2C9ABE1C88BCD00020B202 /* Alamofire.framework */,
 				4A2C9A8A1C88B28F0020B202 /* GitHubGists */,
 				4A2C9AA41C88B2900020B202 /* GitHubGistsTests */,
 				4A2C9AAF1C88B2900020B202 /* GitHubGistsUITests */,
@@ -141,6 +149,7 @@
 				4A2C9A841C88B28F0020B202 /* Sources */,
 				4A2C9A851C88B28F0020B202 /* Frameworks */,
 				4A2C9A861C88B28F0020B202 /* Resources */,
+				4A2C9AC21C88BCF80020B202 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -256,6 +265,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4A2C9AC21C88BCF80020B202 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4A2C9A841C88B28F0020B202 /* Sources */ = {
@@ -405,6 +432,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GitHubGists/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.luupy.GitHubGists;
@@ -416,6 +447,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GitHubGists/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.luupy.GitHubGists;
