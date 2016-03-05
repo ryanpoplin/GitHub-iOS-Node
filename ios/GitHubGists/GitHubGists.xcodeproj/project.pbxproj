@@ -18,6 +18,10 @@
 		4A2C9AB11C88B2910020B202 /* GitHubGistsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2C9AB01C88B2910020B202 /* GitHubGistsUITests.swift */; };
 		4A2C9ABF1C88BCD00020B202 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2C9ABE1C88BCD00020B202 /* Alamofire.framework */; };
 		4A2C9AC11C88BCD30020B202 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A2C9AC01C88BCD30020B202 /* SwiftyJSON.framework */; };
+		4A2C9AC41C88CF470020B202 /* GitHubAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2C9AC31C88CF470020B202 /* GitHubAPIManager.swift */; };
+		4A2C9AC61C88D02B0020B202 /* CustomAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2C9AC51C88D02B0020B202 /* CustomAPIManager.swift */; };
+		4A2C9AC81C88D1C90020B202 /* GistRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2C9AC71C88D1C90020B202 /* GistRouter.swift */; };
+		4A2C9ACA1C88D1DB0020B202 /* CustomRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2C9AC91C88D1DB0020B202 /* CustomRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,11 @@
 		4A2C9AB21C88B2910020B202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A2C9ABE1C88BCD00020B202 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		4A2C9AC01C88BCD30020B202 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		4A2C9AC31C88CF470020B202 /* GitHubAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubAPIManager.swift; sourceTree = "<group>"; };
+		4A2C9AC51C88D02B0020B202 /* CustomAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAPIManager.swift; sourceTree = "<group>"; };
+		4A2C9AC71C88D1C90020B202 /* GistRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GistRouter.swift; sourceTree = "<group>"; };
+		4A2C9AC91C88D1DB0020B202 /* CustomRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomRouter.swift; sourceTree = "<group>"; };
+		4A2C9ACC1C8A75230020B202 /* playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = playground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +96,7 @@
 		4A2C9A7F1C88B28F0020B202 = {
 			isa = PBXGroup;
 			children = (
+				4A2C9ACC1C8A75230020B202 /* playground.playground */,
 				4A2C9AC01C88BCD30020B202 /* SwiftyJSON.framework */,
 				4A2C9ABE1C88BCD00020B202 /* Alamofire.framework */,
 				4A2C9A8A1C88B28F0020B202 /* GitHubGists */,
@@ -117,6 +127,10 @@
 				4A2C9A991C88B28F0020B202 /* LaunchScreen.storyboard */,
 				4A2C9A9C1C88B2900020B202 /* Info.plist */,
 				4A2C9A8D1C88B28F0020B202 /* GitHubGists.xcdatamodeld */,
+				4A2C9AC31C88CF470020B202 /* GitHubAPIManager.swift */,
+				4A2C9AC51C88D02B0020B202 /* CustomAPIManager.swift */,
+				4A2C9AC71C88D1C90020B202 /* GistRouter.swift */,
+				4A2C9AC91C88D1DB0020B202 /* CustomRouter.swift */,
 			);
 			path = GitHubGists;
 			sourceTree = "<group>";
@@ -289,10 +303,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A2C9AC81C88D1C90020B202 /* GistRouter.swift in Sources */,
+				4A2C9ACA1C88D1DB0020B202 /* CustomRouter.swift in Sources */,
 				4A2C9A8C1C88B28F0020B202 /* AppDelegate.swift in Sources */,
 				4A2C9A8F1C88B28F0020B202 /* GitHubGists.xcdatamodeld in Sources */,
+				4A2C9AC41C88CF470020B202 /* GitHubAPIManager.swift in Sources */,
 				4A2C9A911C88B28F0020B202 /* MasterViewController.swift in Sources */,
 				4A2C9A931C88B28F0020B202 /* DetailViewController.swift in Sources */,
+				4A2C9AC61C88D02B0020B202 /* CustomAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
