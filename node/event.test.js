@@ -1,29 +1,29 @@
-"use strict"
+"use strict";
 
-var EventEmitter = require("events").EventEmitter
-var util = require("util")
+var EventEmitter = require("events").EventEmitter;
+var util = require("util");
 
 var Counter = function (init) {
 	this.increment = function () {
-		init++
-		this.emit("incremented", init)
-	}
-}
+		init++;
+		this.emit("incremented", init);
+	};
+};
 
-util.inherits(Counter, EventEmitter)
+util.inherits(Counter, EventEmitter);
 
-var counter = new Counter(10) 
+var counter = new Counter(10);
 
 var callback = function (count) {
-	console.log(count)
-}
+	console.log(count);
+};
 
 var removeListenerCallback = function (eventName) {
-	console.log(eventName)
-}
+	console.log(eventName);
+};
 
-counter.addListener("incremented", callback)
+counter.addListener("incremented", callback);
 
-counter.increment()
+counter.increment();
 
-counter.removeListener("incremented", removeListenerCallback("incremented"))
+counter.removeListener("incremented", removeListenerCallback("incremented"));
