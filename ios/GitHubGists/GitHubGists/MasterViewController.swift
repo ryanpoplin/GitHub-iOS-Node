@@ -14,7 +14,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     var detailViewController: DetailViewController? = nil
     var managedObjectContext: NSManagedObjectContext? = nil
 
-
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        GitHubAPIManager.sharedInstance.printPublicGists()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
