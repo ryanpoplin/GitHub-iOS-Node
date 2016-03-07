@@ -1,3 +1,5 @@
+"use strict";
+
 const greet = require("./greet");
 greet();
 
@@ -63,3 +65,23 @@ var firstName = "Ryan";
     console.log(firstName);
 }("Fox"));
 console.log(firstName);
+
+const moduleExample = require("./greet");
+console.log(moduleExample);
+
+console.log("first");
+// setTimeout adds the callback to the queue after the delay
+// this does not execute right after delay is over
+// setTimeout(function() { 
+//     console.log("second");
+// }, 1);
+// will execute faster checking the process of i/o in the queue
+// run this shit after printing first and third
+setImmediate(function() {
+    console.log("second");
+});
+console.log("third");
+
+const greetingModule = require("./greetings");
+greetingModule.english();
+greetingModule.spanish();
