@@ -95,12 +95,28 @@
 // // required modules are cached
 // // module.exports are only ran once
 
-const greetings = require("./greetings");
+// const greetings = require("./greetings");
 
-const greetness = new greetings.greetness();
-greetness.greeting = "Chappie!";
-console.log(greetness.greeting);
+// const greetness = new greetings.greetness();
+// greetness.greeting = "Chappie!";
+// console.log(greetness.greeting);
 
-const greetness2 = new greetings.greetness();
-greetness2.greeting = "New greeting";
-console.log(greetness2.greeting);
+// const greetness2 = new greetings.greetness();
+// greetness2.greeting = "New greeting";
+// console.log(greetness2.greeting);
+
+const express = require("express");
+const app = express();
+const routes = require("./routes");
+
+// process.env.PORT = 
+// process.env.IP = 
+
+// routes and callbacks
+app.get("/", routes.index);
+app.get("/login", routes.login);
+app.post("/login", routes.loginProcess);
+app.get("/chat", routes.chat);
+
+app.listen(process.env.PORT, process.env.IP);
+console.log("Server Started");
